@@ -1,6 +1,6 @@
-5de7346b334f0801023e13888b50cb52 *DESCRIPTION
+39c7e8d222da5a94f3ebb22085e7649c *DESCRIPTION
 267bdb6b1a82f0a212bddaa419f5401c *NAMESPACE
-4b0f5edb2a25147b905a7a7ac57fd062 *NEWS.md
+0cd5e6857e43ec8adab8d2cac9399b18 *NEWS.md
 e776296e5b7bb476bfbd327307855043 *R/RcppExports.R
 c217eea4dc20090a56e3b21e70913061 *R/data.R
 d1bef0800e41d6e5f1fa5ffef91ce5af *R/keyATM-package.R
@@ -8,7 +8,7 @@ ee9a1c6b6dbe2e284d8de6ac698200fb *R/keyATM.R
 035667f495cb6fc5b453af0d8ae6c4fe *R/keyATMvb.R
 524ad3e22cbeeb77a1487a30db8b0fba *R/model.R
 c2556e1f849add3553379f80e2e3bbcc *R/plots.R
-fbc6c6fa1eef633b5dc6b8b20c6a0bf3 *R/posterior.R
+1508ad9402cc8d76bc7c5aa72ad2b21d *R/posterior.R
 962563f265beb76cc7cac84d8686aef8 *R/predict.R
 81d85a1ecd56b68abbfe1470b87f99f2 *R/utils.R
 949552629cc6b5569ce977a6aeb20d3a *R/zzz.R
@@ -18,7 +18,7 @@ fbc6c6fa1eef633b5dc6b8b20c6a0bf3 *R/posterior.R
 daa7a642255561baca683d020724b8ed *man/by_strata_TopicWord.Rd
 eb638b1c8345892bc8de96843493afe2 *man/covariates_get.Rd
 b1cb5af56987b49463202912c5975cfd *man/covariates_info.Rd
-417bb724c0d83ba2486f14b804953aeb *man/keyATM-package.Rd
+ca905f45a7fac6ecf2ea04df39d04c15 *man/keyATM-package.Rd
 d30e128e48ab2c02b22a6ae6aa2b1e78 *man/keyATM.Rd
 276702ed868e3a7aeba5beb8f375d900 *man/keyATM_data_bills.Rd
 64c8debd0389501b6bd86f76cb087f9e *man/keyATM_fit.Rd
@@ -80,7 +80,7 @@ d81989a2dfb5d965222025fc37873872 *src/sampler.cpp
 e8e36352ec436fdcc18e69be6c2954e2 *src/sampler.h
 fd074fe7ce9bd15d58e17d6f08ab85b4 *src/train.cpp
 a83de622c664b61c1b4b3bf6fc308921 *tests/testthat.R
-fe4917a96eda0ab771ff9ed28acb29bd *tests/testthat/test-Initialization.R
+b606eb846ac594c919ff0570c1cd6a79 *tests/testthat/test-Initialization.R
 957039ec840b4332154f4879be157010 *tests/testthat/test-keyATMBase.R
 52e5129671c7a24cb2bae9072942a6a2 *tests/testthat/test-keyATMCov.R
 8673d5f51e9e3a38923f0e0c7a1d8b41 *tests/testthat/test-keyATMDynamic.R
