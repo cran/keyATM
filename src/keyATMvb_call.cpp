@@ -1,12 +1,15 @@
 #include <Rcpp.h>
+
+#define EIGEN_PERMANENTLY_DISABLE_STUPID_WARNINGS
 #include <RcppEigen.h>
+
 #include <iostream>
 #include <algorithm>
 #include <unordered_set>
 #include "sampler.h"
 #include "keyATMvb_main.h"
 
-// [[Rcpp::plugins(cpp11)]]
+// [[Rcpp::plugins(cpp17)]]
 // [[Rcpp::depends(RcppEigen)]]
 
 

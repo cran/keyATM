@@ -1,5 +1,8 @@
 #include <Rcpp.h>
+
+#define EIGEN_PERMANENTLY_DISABLE_STUPID_WARNINGS
 #include <RcppEigen.h>
+
 #include <iostream>
 #include <algorithm>
 #include <string>
@@ -10,14 +13,13 @@
 #include "sampler.h"
 #include "initialize.h"
 
-// [[Rcpp::plugins(cpp11)]]
+// [[Rcpp::plugins(cpp17)]]
 // [[Rcpp::depends(RcppEigen)]]
 
 
 using namespace Eigen;
 using namespace Rcpp;
 using namespace std;
-
 
 
 //
@@ -35,9 +37,9 @@ keyATMinitialize::keyATMinitialize(List docs_, List info_, List initialized_)
 
   // Initialize
   if (model_key) {
-    initialize_keyATM(); 
+    initialize_keyATM();
   } else {
-    initialize_LDA(); 
+    initialize_LDA();
   }
 }
 
@@ -54,7 +56,7 @@ List keyATMinitialize::return_initialized()
   initialized["Z"] = Z;
 
   if (model_key) {
-    // keyATM 
+    // keyATM
     initialized["S"] = S;
     initialized["keywords_id"] = keywords_id;
   }
@@ -79,19 +81,19 @@ void keyATMinitialize::data_load()
   Z = initialized["Z"];
 
   if (model_key) {
-    // keyATM 
+    // keyATM
     S = initialized["S"];
     keywords_id = initialized["keywords_id"];
-  } 
+  }
 
   // Load vocabulary
   wd_names = info["wd_names"];
   vocab_size = wd_names.size();
   string word;
 
-  for (int wid = 0; wid < vocab_size; wid++) {
+  for (int wid = 0; wid < vocab_size; ++wid) {
     word = wd_names[wid];
-    wd_map[word] = wid; 
+    wd_map[word] = wid;
   }
 }
 
@@ -111,24 +113,23 @@ void keyATMinitialize::initialize_keyATM()
   int keyword_num_appear;
 
   double u;
-  double prob;
   double prob_allK = 1.0 / total_k;
   int index;
-  
-  for (int doc_id = 0; doc_id < doc_num; doc_id++) {
+
+  for (int doc_id = 0; doc_id < doc_num; ++doc_id) {
     doc = docs[doc_id];
     doc_len = doc.size();
-  
+
     IntegerVector W_doc = W[doc_id];
     IntegerVector Z_doc = Z[doc_id];
     IntegerVector S_doc = S[doc_id];
-  
-    for (int doc_pos = 0; doc_pos < doc_len; doc_pos++) {
-      // W 
+
+    for (int doc_pos = 0; doc_pos < doc_len; ++doc_pos) {
+      // W
       word = doc[doc_pos];
       wid = wd_map[word];
       W_doc[doc_pos] = wid;
-  
+
       // Z and S
       if (keywords_set.find(wid) != keywords_set.end()) {
         // Keyword
@@ -145,9 +146,9 @@ void keyATMinitialize::initialize_keyATM()
         // S
         u = R::unif_rand();
         if (u < 0.3) {
-          s = 0; 
+          s = 0;
         } else {
-          s = 1;  
+          s = 1;
         }
       } else {
         // Not a keyword
@@ -158,7 +159,7 @@ void keyATMinitialize::initialize_keyATM()
       Z_doc[doc_pos] = z;
       S_doc[doc_pos] = s;
     }
-  
+
     W[doc_id] = W_doc;
     Z[doc_id] = Z_doc;
     S[doc_id] = S_doc;
@@ -177,21 +178,21 @@ void keyATMinitialize::initialize_keywords()
   string keyword;
   int keyword_id;
 
-  for (int k = 0; k < keywords_raw.size(); k++) {
-    keywords_topic = keywords_raw[k]; 
+  for (int k = 0; k < keywords_raw.size(); ++k) {
+    keywords_topic = keywords_raw[k];
     IntegerVector keywords_id_k = keywords_id[k];
 
-    for (int j = 0; j < keywords_topic.size(); j++) {
+    for (int j = 0; j < keywords_topic.size(); ++j) {
       keyword = keywords_topic[j];
-      keyword_id = wd_map[keyword]; 
+      keyword_id = wd_map[keyword];
       keywords_id_k[j] = wd_map[keyword];
 
       if (keywords_set.find(keyword_id) != keywords_set.end()) {
-        // Already registered 
+        // Already registered
         key_topic_map[keyword_id].push_back(k);
         key_count_map[keyword_id] += 1;
       } else {
-        // New keyword 
+        // New keyword
         keywords_set.insert(keyword_id);
         vector<int> topics;
         topics.push_back(k);
@@ -203,7 +204,7 @@ void keyATMinitialize::initialize_keywords()
 
     keywords_id[k] = keywords_id_k;
   }
-   
+
 }
 
 
@@ -216,7 +217,7 @@ void keyATMinitialize::initialize_LDA()
   int doc_len;
   double prob = 1.0 / total_k;
 
-  for (int doc_id = 0; doc_id < doc_num; doc_id++) {
+  for (int doc_id = 0; doc_id < doc_num; ++doc_id) {
     doc = docs[doc_id];
     doc_len = doc.size();
 
@@ -224,12 +225,12 @@ void keyATMinitialize::initialize_LDA()
     IntegerVector Z_doc = Z[doc_id];
     IntegerVector S_doc = S[doc_id];
 
-    for (int doc_pos = 0; doc_pos < doc_len; doc_pos++) {
+    for (int doc_pos = 0; doc_pos < doc_len; ++doc_pos) {
       word = doc[doc_pos];
       wid = wd_map[word];
       W_doc[doc_pos] = wid;
 
-      z = sampler::rcat_eqprob(prob, total_k);    
+      z = sampler::rcat_eqprob(prob, total_k);
       Z_doc[doc_pos] = z;
     }
 
@@ -247,7 +248,7 @@ void keyATMinitialize::initialize_LDA()
 //' Initialize assignments
 //'
 //' @param info Various information
-//' @param initialized Store initialized objects (W, S and Z) 
+//' @param initialized Store initialized objects (W, S and Z)
 //'
 //' @keywords internal
 // [[Rcpp::export]]
