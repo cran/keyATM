@@ -1,5 +1,5 @@
 Package: keyATM
-Version: 0.5.2
+Version: 0.5.3
 Title: Keyword Assisted Topic Models
 Description: Fits keyword assisted topic models (keyATM) using collapsed Gibbs samplers. The keyATM combines the latent dirichlet allocation (LDA) models with a small number of keywords selected by researchers in order to improve the interpretability and topic classification of the LDA. The keyATM can also incorporate covariates and directly model time trends. The keyATM is proposed in Eshima, Imai, and Sasaki (2024) <doi:10.1111/ajps.12779>.
 Authors@R: c(person("Shusei", "Eshima", email = "shuseieshima@gmail.com", role = c("aut","cre"), comment = c(ORCID = "0000-0003-3613-4046")),
@@ -7,6 +7,7 @@ Authors@R: c(person("Shusei", "Eshima", email = "shuseieshima@gmail.com", role =
     person("Kosuke", "Imai", email = "imai@harvard.edu", role = c("aut")),
     person("Chung-hong", "Chan", email = "chainsawtiney@gmail.com", role = c("ctb"), comment = c(ORCID = "0000-0002-6232-7530")),
     person(given = "Romain", family = "François", role = "ctb", comment = c(ORCID = "0000-0002-2444-4226")),
+    person(given = "Martin", family = "Feldkircher", role = "ctb", comment = c(ORCID = "0000-0002-5511-9215")),
     person("William", "Lowe", email = "wlowe@princeton.edu", role = c("ctb")),
     person("Seo-young Silvia", "Kim", email = "sy.silvia.kim@gmail.com", role = c("ctb"), comment = c(ORCID = "0000-0002-8801-9210")))
 License: GPL-3
@@ -25,14 +26,15 @@ LazyData: TRUE
 RoxygenNote: 7.2.3
 SystemRequirements: C++17
 NeedsCompilation: yes
-Packaged: 2024-04-24 11:20:17 UTC; shusei
+Packaged: 2025-03-30 11:57:11 UTC; shusei
 Author: Shusei Eshima [aut, cre] (<https://orcid.org/0000-0003-3613-4046>),
   Tomoya Sasaki [aut],
   Kosuke Imai [aut],
   Chung-hong Chan [ctb] (<https://orcid.org/0000-0002-6232-7530>),
   Romain François [ctb] (<https://orcid.org/0000-0002-2444-4226>),
+  Martin Feldkircher [ctb] (<https://orcid.org/0000-0002-5511-9215>),
   William Lowe [ctb],
   Seo-young Silvia Kim [ctb] (<https://orcid.org/0000-0002-8801-9210>)
 Maintainer: Shusei Eshima <shuseieshima@gmail.com>
 Repository: CRAN
-Date/Publication: 2024-04-24 14:50:06 UTC
+Date/Publication: 2025-03-30 12:20:02 UTC
