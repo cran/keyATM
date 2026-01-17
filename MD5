@@ -1,13 +1,13 @@
-5446ca3650f71635ee874c86180b375e *DESCRIPTION
+d0e03fab582faa2887a7ed19b4d0e759 *DESCRIPTION
 860a63b85bf85ab6d743754bc096ebe0 *NAMESPACE
-87525ecc3cd653059187a166d5532af8 *NEWS.md
+f179e262c303d1762166fb3354b1e5e1 *NEWS.md
 968e1f9f559f3cb0ee4a966ccf9d9e5c *R/RcppExports.R
 4f9f0d99d2c293bc12d8669930df9fc2 *R/analysis_covariates.R
 35a5839293ef9186718e60677e1630f4 *R/data.R
 efd4692dc9f608523517005a8e1ba51f *R/keyATM-package.R
 c1726da802e3e1fe1f0d5cc3557e976c *R/keyATM.R
-d9d337cd2fa8890754763d9230ccc82a *R/keyATMvb.R
-ba6406d08054c5a51175deef9f244f3a *R/model.R
+8254786a38084068f74c26eb572d3440 *R/keyATMvb.R
+4e67f21f742f3764565516b76c42b662 *R/model.R
 f371f6bb32d6348653c36d34e1b96e49 *R/multiPGreg.R
 d797506cc4471515a6502917152fb7e5 *R/plots.R
 8ec000016977ec6da06fac2bb0f31097 *R/posterior.R
@@ -48,7 +48,7 @@ eeee326ce9b76ecf04b1034900e39f43 *man/plot_topicprop.Rd
 9083863653570e7614ffff44d52e45a4 *man/predict.keyATM_output.Rd
 80cd8353b29f7bcec6d18697f64bd1b8 *man/read_dfm_cpp.Rd
 c044abebde0cbd23c22764f032f69524 *man/read_keywords.Rd
-9b12c891b6ff0e7595370bc32114fb25 *man/refine_keywords.Rd
+cf97dfe2dd3937bd53211da4ec61c1f6 *man/refine_keywords.Rd
 e6ad9da6f5f362ce7dad44783ecd677c *man/save_fig.Rd
 68421d7ab26d625e3b65642aafe8a8e6 *man/semantic_coherence.Rd
 8a0193f573a6e1e43c4aaa7f85de9a33 *man/top_docs.Rd
@@ -103,6 +103,6 @@ a83de622c664b61c1b4b3bf6fc308921 *tests/testthat.R
 b30455606c195077491e5fc355cb073d *tests/testthat/test-plot.R
 bb106e6fddfe0b8dcf4309e6da5e6ab4 *tests/testthat/test-read_keywords.R
 766346e5455e05ffd0e1f927e078baae *tests/testthat/test-read_texts.R
-2f7b54504c423ab6ea9cfc909751ee75 *tests/testthat/test-refine_keywords.R
+e43f51c31266b27487c02d6f03be835d *tests/testthat/test-refine_keywords.R
 87e3ac5288e8863c3123a73750c4bfe7 *tests/testthat/test-resume.R
 04a7ba385f2b1ddb7fcfe69abb23ccf1 *tests/testthat/test-weightedLDA.R
